@@ -6,27 +6,25 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct PulseNewsApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.diContainer, DIContainer.shared)
         }
-        .modelContainer(sharedModelContainer)
+    }
+}
+
+private struct DIContainerKey: EnvironmentKey {
+    static let defaultValue = DIContainer.shared
+}
+
+extension EnvironmentValues {
+    var diContainer: DIContainer {
+        get { self[DIContainerKey.self] }
+        set { self[DIContainerKey.self] = newValue }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol APIClientProtocol: Sendable {
-    func request<T: Decodable & Sendable>(_ endpoint: APIEndpoint) async throws -> T
+    func request<T: Decodable & Sendable>(_ endpoint: Endpoint) async throws -> T
 }
 
 final class APIClient: APIClientProtocol {
@@ -19,8 +19,8 @@ final class APIClient: APIClientProtocol {
         self.session = session
     }
 
-    func request<T: Decodable & Sendable>(_ endpoint: APIEndpoint) async throws -> T {
-        guard let urlRequest = endpoint.urlRequest else {
+    func request<T: Decodable & Sendable>(_ endpoint: Endpoint) async throws -> T {
+        guard let urlRequest = endpoint.makeRequest() else {
             throw NetworkError.invalidURL
         }
 

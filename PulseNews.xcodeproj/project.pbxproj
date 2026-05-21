@@ -10,6 +10,7 @@
 		140052622FBC7C92007167E1 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 140052612FBC7C92007167E1 /* CLAUDE.md */; };
 		140052642FBC8087007167E1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 140052632FBC8087007167E1 /* README.md */; };
 		1400528E2FBC8698007167E1 /* Secret.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1400528D2FBC8698007167E1 /* Secret.xcconfig */; };
+		14B4A2F72FBEFDAD00C9E965 /*  PulseNewsDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14B4A2F52FBEFDAD00C9E965 /*  PulseNewsDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		140052612FBC7C92007167E1 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		140052632FBC8087007167E1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1400528D2FBC8698007167E1 /* Secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secret.xcconfig; sourceTree = "<group>"; };
+		14B4A2F62FBEFDAD00C9E965 /*  PulseNewsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = " PulseNewsDataModel.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -97,6 +99,7 @@
 		1400522B2FBC701E007167E1 = {
 			isa = PBXGroup;
 			children = (
+				14B4A2F52FBEFDAD00C9E965 /*  PulseNewsDataModel.xcdatamodeld */,
 				1400528D2FBC8698007167E1 /* Secret.xcconfig */,
 				140052612FBC7C92007167E1 /* CLAUDE.md */,
 				140052632FBC8087007167E1 /* README.md */,
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B4A2F72FBEFDAD00C9E965 /*  PulseNewsDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +303,7 @@
 /* Begin XCBuildConfiguration section */
 		140052562FBC701F007167E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1400528D2FBC8698007167E1 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -360,6 +365,7 @@
 		};
 		140052572FBC701F007167E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1400528D2FBC8698007167E1 /* Secret.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -413,6 +419,7 @@
 		};
 		140052592FBC701F007167E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1400528D2FBC8698007167E1 /* Secret.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -433,25 +440,28 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kareem.portfolio..pulsenews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pulsenews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Debug;
 		};
 		1400525A2FBC701F007167E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1400528D2FBC8698007167E1 /* Secret.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -472,19 +482,21 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kareem.portfolio..pulsenews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pulsenews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Release;
@@ -615,6 +627,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		14B4A2F52FBEFDAD00C9E965 /*  PulseNewsDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				14B4A2F62FBEFDAD00C9E965 /*  PulseNewsDataModel.xcdatamodel */,
+			);
+			currentVersion = 14B4A2F62FBEFDAD00C9E965 /*  PulseNewsDataModel.xcdatamodel */;
+			path = " PulseNewsDataModel.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1400522C2FBC701E007167E1 /* Project object */;
 }

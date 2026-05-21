@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct NewsResponseDTO: Decodable, Sendable {
+    let status: String
+    let totalResults: Int?
+    let articles: [ArticleDTO]?
+}

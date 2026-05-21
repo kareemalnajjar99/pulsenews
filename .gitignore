@@ -51,6 +51,7 @@ GoogleService-Info.plist
 
 # Xcode local UI state
 UserInterfaceState.xcuserstate
+UserInterfaceUpdate/
 
 # XCTest
 *.xccheckout
