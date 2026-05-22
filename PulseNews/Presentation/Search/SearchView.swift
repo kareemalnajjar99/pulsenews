@@ -47,7 +47,8 @@ struct SearchView: View {
                         ArticleDetailView(
                             viewModel: ArticleDetailViewModel(
                                 article: article,
-                                bookmarkArticle: DIContainer.shared.bookmark.makeBookmarkArticleUseCase()
+                                bookmarkArticleUseCase: DIContainer.shared.bookmark.makeBookmarkArticleUseCase(),
+                                isBookmarkedUseCase: DIContainer.shared.bookmark.makeIsBookmarkedUseCase()
                             )
                         )
                     } label: {

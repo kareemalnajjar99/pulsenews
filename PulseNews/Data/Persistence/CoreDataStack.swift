@@ -7,41 +7,50 @@
 
 import CoreData
 
-final class CoreDataStack: @unchecked Sendable {
+final class CoreDataStack {
 
     static let shared = CoreDataStack()
 
-    private let container: NSPersistentContainer
+    let persistentContainer: NSPersistentContainer
 
-    init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "PulseNewsDataModel")
+    var viewContext: NSManagedObjectContext {
+        persistentContainer.viewContext
+    }
 
-        if inMemory {
-            container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
-        }
+    private init() {
 
-        container.loadPersistentStores { _, error in
+        persistentContainer = NSPersistentContainer(
+            name: "PulseNewsDataModel"
+        )
+
+        let description = persistentContainer.persistentStoreDescriptions.first
+
+        description?.setOption(
+            true as NSNumber,
+            forKey: NSMigratePersistentStoresAutomaticallyOption
+        )
+
+        description?.setOption(
+            true as NSNumber,
+            forKey: NSInferMappingModelAutomaticallyOption
+        )
+
+        persistentContainer.loadPersistentStores { _, error in
             if let error {
-                AppLogger.data.error("CoreData failed to load: \(error.localizedDescription)")
+                fatalError("Failed to load Core Data store: \(error)")
             }
         }
 
-        container.viewContext.automaticallyMergesChangesFromParent = true
-        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-    }
-
-    var viewContext: NSManagedObjectContext {
-        container.viewContext
+        persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
+        persistentContainer.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
 
     func newBackgroundContext() -> NSManagedObjectContext {
-        let context = container.newBackgroundContext()
-        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        return context
-    }
+        let context = persistentContainer.newBackgroundContext()
 
-    func save(context: NSManagedObjectContext) throws {
-        guard context.hasChanges else { return }
-        try context.save()
+        context.automaticallyMergesChangesFromParent = true
+        context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+
+        return context
     }
 }

@@ -5,7 +5,6 @@
 //  Created by Kareem Alnajjar on 21/05/2026.
 //
 
-
 import SwiftUI
 
 struct ArticleDetailView: View {
@@ -101,6 +100,7 @@ struct ArticleDetailView: View {
         } message: {
             Text(viewModel.errorMessage ?? "")
         }
+        .task { await viewModel.load() }
     }
 }
 
@@ -109,7 +109,8 @@ struct ArticleDetailView: View {
         ArticleDetailView(
             viewModel: ArticleDetailViewModel(
                 article: .preview,
-                bookmarkArticle: PreviewBookmarkArticleUseCase()
+                bookmarkArticleUseCase: PreviewBookmarkArticleUseCase(),
+                isBookmarkedUseCase: PreviewBookmarkStateUseCase()
             )
         )
     }
@@ -117,4 +118,8 @@ struct ArticleDetailView: View {
 
 private final class PreviewBookmarkArticleUseCase: BookmarkArticleUseCaseProtocol {
     func execute(article: Article, isBookmarked: Bool) async throws {}
+}
+
+private final class PreviewBookmarkStateUseCase: IsBookmarkedUseCaseProtocol {
+    func execute(article: Article) async throws -> Bool { return true }
 }

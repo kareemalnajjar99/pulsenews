@@ -26,4 +26,8 @@ final class BookmarkDIContainer {
     func makeGetBookmarksUseCase() -> GetBookmarksUseCaseProtocol {
         GetBookmarksUseCase(repository: repository)
     }
+    
+    func makeIsBookmarkedUseCase() -> IsBookmarkedUseCaseProtocol {
+        IsBookmarkedUseCase(repository: repository)
+    }
 }
