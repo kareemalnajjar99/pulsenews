@@ -9,11 +9,11 @@ import SwiftUI
 
 struct FeedView: View {
 
-    @StateObject private var viewModel: FeedViewModel
+    @State private var viewModel: FeedViewModel
     @Namespace private var namespace
 
     init(viewModel: FeedViewModel) {
-        _viewModel = StateObject(wrappedValue: viewModel)
+        _viewModel = State(wrappedValue: viewModel)
     }
 
     var body: some View {

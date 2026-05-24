@@ -30,7 +30,7 @@ A news reader for iOS 26 built with SwiftUI and Clean Architecture.
 
 ## Architecture
 
-Clean Architecture with an MVVM presentation layer. Dependencies flow strictly inward — the Domain layer has zero framework imports.
+Clean Architecture with an MVVM presentation layer using the `@Observable` macro for state management. Dependencies flow strictly inward — the Domain layer has zero framework imports.
 
 ```
 ┌─────────────────────────────────────────────────────┐
@@ -59,6 +59,7 @@ Clean Architecture with an MVVM presentation layer. Dependencies flow strictly i
 | Language | Swift 6.2 — strict concurrency |
 | UI | SwiftUI, Liquid Glass (iOS 26) |
 | Architecture | MVVM + Clean Architecture |
+| State Management | `@Observable` macro (iOS 17+) |
 | Concurrency | `async`/`await` · `Actor` · `@MainActor` |
 | Networking | `URLSession` — generic `APIClient` |
 | Persistence | Core Data (offline-first) |

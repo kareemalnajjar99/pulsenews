@@ -6,13 +6,14 @@
 //
 
 
-import Foundation
+import Observation
 
+@Observable
 @MainActor
-final class ArticleDetailViewModel: ObservableObject {
+final class ArticleDetailViewModel {
     
-    @Published var isBookmarked = false
-    @Published var errorMessage: String?
+    var isBookmarked = false
+    var errorMessage: String?
     
     let article: Article
     

@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ArticleDetailView: View {
 
-    @StateObject private var viewModel: ArticleDetailViewModel
+    @State private var viewModel: ArticleDetailViewModel
     @Environment(\.openURL) private var openURL
 
     init(viewModel: ArticleDetailViewModel) {
-        _viewModel = StateObject(wrappedValue: viewModel)
+        _viewModel = State(wrappedValue: viewModel)
     }
 
     var body: some View {

@@ -5,15 +5,16 @@
 //  Created by Kareem Alnajjar on 21/05/2026.
 //
 
-import Foundation
+import Observation
 
+@Observable
 @MainActor
-final class FeedViewModel: ObservableObject {
+final class FeedViewModel {
 
-    @Published var articles: [Article] = []
-    @Published var isLoading = false
-    @Published var errorMessage: String?
-    @Published var selectedCategory: NewsCategory = .general
+    var articles: [Article] = []
+    var isLoading = false
+    var errorMessage: String?
+    var selectedCategory: NewsCategory = .general
 
     private let fetchHeadlines: FetchTopHeadlinesUseCaseProtocol
     private var currentPage = 1

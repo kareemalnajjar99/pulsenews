@@ -10,10 +10,10 @@ import SwiftUI
 
 struct BookmarksView: View {
 
-    @StateObject private var viewModel: BookmarksViewModel
+    @State private var viewModel: BookmarksViewModel
 
     init(viewModel: BookmarksViewModel) {
-        _viewModel = StateObject(wrappedValue: viewModel)
+        _viewModel = State(wrappedValue: viewModel)
     }
 
     var body: some View {

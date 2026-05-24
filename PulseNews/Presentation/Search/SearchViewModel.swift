@@ -5,15 +5,16 @@
 //  Created by Kareem Alnajjar on 21/05/2026.
 //
 
-import Foundation
+import Observation
 
+@Observable
 @MainActor
-final class SearchViewModel: ObservableObject {
+final class SearchViewModel {
 
-    @Published var query = ""
-    @Published var articles: [Article] = []
-    @Published var isLoading = false
-    @Published var errorMessage: String?
+    var query = ""
+    var articles: [Article] = []
+    var isLoading = false
+    var errorMessage: String?
 
     private let searchArticles: SearchArticlesUseCaseProtocol
     private var currentPage = 1

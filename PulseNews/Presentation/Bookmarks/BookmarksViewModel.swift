@@ -5,14 +5,15 @@
 //  Created by Kareem Alnajjar on 21/05/2026.
 //
 
-import Foundation
+import Observation
 
+@Observable
 @MainActor
-final class BookmarksViewModel: ObservableObject {
+final class BookmarksViewModel {
 
-    @Published var articles: [Article] = []
-    @Published var isLoading = false
-    @Published var errorMessage: String?
+    var articles: [Article] = []
+    var isLoading = false
+    var errorMessage: String?
 
     private let getBookmarks: GetBookmarksUseCaseProtocol
     private let bookmarkArticle: BookmarkArticleUseCaseProtocol
