@@ -68,4 +68,4 @@ UserInterfaceUpdate/
 *.profdata
 
 # Danger
-danger-output.md
+danger-output.md.DS_Store
