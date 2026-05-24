@@ -15,12 +15,12 @@ A news reader for iOS 26 built with SwiftUI and Clean Architecture.
 
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/16cf3dbb-5c03-4bf2-b70e-c58656919a09" width="320" alt="Feed screen"></td>
-    <td><img src="https://github.com/user-attachments/assets/311927d8-3610-47b9-a59e-28c159da57f1" width="320" alt="Search screen"></td>
+    <td><img src="https://github.com/user-attachments/assets/16cf3dbb-5c03-4bf2-b70e-c58656919a09" width="240" alt="Feed screen"></td>
+    <td><img src="https://github.com/user-attachments/assets/311927d8-3610-47b9-a59e-28c159da57f1" width="240" alt="Search screen"></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/aa76f8fc-e132-47b1-b9f3-a9478e8c758f" width="320" alt="Bookmarks screen"></td>
-    <td><img src="https://github.com/user-attachments/assets/8655bb90-a9d5-41ee-a7ef-31902e9d24a3" width="320" alt="Article detail screen"></td>
+    <td><img src="https://github.com/user-attachments/assets/aa76f8fc-e132-47b1-b9f3-a9478e8c758f" width="240" alt="Bookmarks screen"></td>
+    <td><img src="https://github.com/user-attachments/assets/8655bb90-a9d5-41ee-a7ef-31902e9d24a3" width="240" alt="Article detail screen"></td>
   </tr>
 </table>
 
