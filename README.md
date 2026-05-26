@@ -95,7 +95,7 @@ Clean Architecture with an MVVM presentation layer using the `@Observable` macro
    cd PulseNews
    ```
 
-2. Create `Secrets.xcconfig` in the project root (git-ignored):
+2. Create `Secret.xcconfig` in the project root (git-ignored):
    ```
    NEWS_API_KEY = your_api_key_here
    ```
