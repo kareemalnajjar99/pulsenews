@@ -20,10 +20,13 @@ jobs:
       - name: Show Xcode version
         run: xcodebuild -version
 
+      - name: List available simulators
+        run: xcrun simctl list devices available
+
       - name: Run tests
         run: |
           xcodebuild test \
             -scheme PulseNews \
-            -destination 'platform=iOS Simulator,name=iPhone 17' \
-            -destination-timeout 30 \
+            -destination 'generic/platform=iOS Simulator' \
+            -destination-timeout 60 \
             CODE_SIGNING_ALLOWED=NO
