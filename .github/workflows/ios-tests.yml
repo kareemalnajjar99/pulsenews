@@ -10,7 +10,7 @@ on:
       - develop
 
 jobs:
-  test:
+  unit-tests:
     runs-on: macos-15
 
     steps:
