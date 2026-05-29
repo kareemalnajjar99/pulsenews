@@ -1,3 +1,10 @@
+//
+//  MockBookmarkRepository.swift
+//  PulseNews
+//
+//  Created by Kareem Alnajjar on 22/05/2026.
+//
+
 @testable import PulseNews
 import Foundation
 
