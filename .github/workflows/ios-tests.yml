@@ -20,13 +20,28 @@ jobs:
       - name: Show Xcode version
         run: xcodebuild -version
 
-      - name: List available simulators
-        run: xcrun simctl list devices available
+      - name: List available runtimes
+        run: xcrun simctl list runtimes
+
+      - name: Create simulator device
+        run: |
+          RUNTIME=$(xcrun simctl list runtimes -j | \
+            python3 -c "import sys,json; runtimes=[r for r in json.load(sys.stdin)['runtimes'] if r['isAvailable'] and r['platform'] == 'iOS']; runtimes.sort(key=lambda r: r['version'], reverse=True); print(runtimes[0]['identifier'] if runtimes else '')")
+          echo "Selected runtime: $RUNTIME"
+          if [ -n "$RUNTIME" ]; then
+            DEVICE_ID=$(xcrun simctl create "Test iPhone" "iPhone 16 Pro" "$RUNTIME")
+            echo "Created device: $DEVICE_ID"
+            echo "DEVICE_ID=$DEVICE_ID" >> $GITHUB_ENV
+          else
+            echo "No available iOS runtime found"
+            exit 1
+          fi
 
       - name: Run tests
         run: |
           xcodebuild test \
             -scheme PulseNews \
-            -destination 'generic/platform=iOS Simulator' \
-            -destination-timeout 60 \
+            -destination "id=${{ env.DEVICE_ID }}" \
+            -destination-timeout 120 \
+            -only-testing:PulseNewsTests \
             CODE_SIGNING_ALLOWED=NO
