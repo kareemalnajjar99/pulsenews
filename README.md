@@ -74,6 +74,7 @@ Clean Architecture with an MVVM presentation layer using the `@Observable` macro
 | Persistence | Core Data (offline-first) |
 | Testing | XCTest + Swift Testing |
 | CI | GitHub Actions |
+| Code Style | File headers with name, project, and author |
 | Localization | String Catalogs (`.xcstrings`) |
 | Logging | `OSLog` |
 
